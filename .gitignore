@@ -7,7 +7,26 @@ node_modules/
 .pnp
 .pnp.js
 
+# ---- Build outputs ----# ---- Dependencies ----
+node_modules/
+.pnp
+.pnp.js
+
+# VS Code
+.vscode/
+
 # ---- Build outputs ----
+dist/
+dist-ssr/
+build/
+
+# ---- Environment variables ----
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
 dist/
 dist-ssr/
 build/
