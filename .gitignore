@@ -1,34 +1,32 @@
 # ============================================
-# ROOT .gitignore - Rent Flatmate / RoomMatch AI
+# RoomMatch AI / Rent Flatmate
+# Root .gitignore
 # ============================================
 
-# ----- Dependencies -----
+# -----------------------------
+# Dependencies
+# -----------------------------
 node_modules/
 .pnp
 .pnp.js
 
-# ---- Build outputs ----# ---- Dependencies ----
-node_modules/
-.pnp
-.pnp.js
-
-# VS Code
-.vscode/
-
-# ---- Build outputs ----
+# -----------------------------
+# Build Output
+# -----------------------------
 dist/
 dist-ssr/
 build/
 
-# ----- Environment variables (NEVER commit these) -----
+# -----------------------------
+# Environment Variables
+# -----------------------------
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-*.env
+.env.*
+!.env.example
 
-# ----- Logs -----
+# -----------------------------
+# Logs
+# -----------------------------
 logs/
 *.log
 npm-debug.log*
@@ -36,7 +34,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# ----- Editor -----
+# -----------------------------
+# Editor / IDE
+# -----------------------------
 .vscode/
 .idea/
 *.suo
@@ -44,27 +44,40 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+*.swp
+
+# -----------------------------
+# OS Files
+# -----------------------------
 .DS_Store
 Thumbs.db
+Desktop.ini
 
-# ----- Vite -----
-*.local
-
-# ----- Coverage / Testing -----
-coverage/
-.nyc_output/
-
-# ----- Cache -----
+# -----------------------------
+# Cache
+# -----------------------------
 .cache/
 .parcel-cache/
 .eslintcache
 
-# ----- OS Files -----
-Desktop.ini
+# -----------------------------
+# Coverage
+# -----------------------------
+coverage/
+.nyc_output/
 
-# ----- Temporary Files -----
+# -----------------------------
+# Vite
+# -----------------------------
+*.local
+
+# -----------------------------
+# Temporary Files
+# -----------------------------
 tmp/
 temp/
 
-# ----- Optional -----
+# -----------------------------
+# Deployment
+# -----------------------------
 .vercel/
