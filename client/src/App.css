@@ -1,0 +1,24 @@
+/* ============================================
+   APP SHELL
+   ============================================ */
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-shell--fullheight {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-shell--fullheight .app-main {
+  overflow: hidden;
+}
