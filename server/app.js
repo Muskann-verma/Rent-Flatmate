@@ -11,8 +11,18 @@ const app = express();
 
 connectDB();
 
+// Allow local dev origins + any production frontend URL set via env
+const allowedOrigins = [
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "http://localhost:4173",
+];
+if (process.env.CORS_ORIGIN) {
+    allowedOrigins.push(process.env.CORS_ORIGIN);
+}
+
 app.use(cors({
-    origin: ["http://localhost:3000", "http://localhost:5173", "http://localhost:4173"],
+    origin: allowedOrigins,
     credentials: true,
 }));
 
@@ -28,6 +38,11 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-    console.log(`✅ Server running on port ${PORT}`);
-});
+// Only start the server when running locally (not on Vercel serverless)
+if (process.env.NODE_ENV !== "production") {
+    app.listen(PORT, () => {
+        console.log(`✅ Server running on port ${PORT}`);
+    });
+}
+
+module.exports = app;

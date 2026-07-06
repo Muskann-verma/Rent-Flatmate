@@ -1,5 +1,6 @@
-// Base fetch wrapper — all API calls go through here
-const BASE_URL = '/api';
+// In production, VITE_API_URL points to the deployed backend on Vercel.
+// In dev, falls back to '/api' which Vite proxies to localhost:5000.
+const BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
 export async function apiFetch(endpoint, { method = 'GET', body, token } = {}) {
   const headers = { 'Content-Type': 'application/json' };
